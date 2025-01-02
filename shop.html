@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - FashionHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            100: '#1a1a1a',
+                            200: '#2d2d2d',
+                            300: '#404040',
+                            400: '#535353',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        /* Smooth transitions for theme changes */
+        * {
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i class="fas fa-tshirt text-blue-600 text-2xl"></i>
+                        <span class="text-2xl font-bold text-gray-800 dark:text-white">FashionHub</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" 
+                        onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Home</a>
+                    <a href="shop.html" class="text-gray-900 dark:text-white font-semibold">Shop</a>
+                    <div class="relative group">
+                        <button class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex items-center">
+                            Categories <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute hidden group-hover:block w-48 bg-white dark:bg-gray-800 shadow-lg py-2 mt-2">
+                            <a href="shop.html?category=Women's%20Fashion" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700">Women's Fashion</a>
+                            <a href="shop.html?category=Men's%20Fashion" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700">Men's Fashion</a>
+                            <a href="shop.html?category=Accessories" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700">Accessories</a>
+                            <a href="shop.html?category=Shoes" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700">Shoes</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">About</a>
+                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Contact</a>
+                </div>
+
+                <!-- Desktop Actions -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <div class="relative">
+                        <input type="text" 
+                               placeholder="Search products..." 
+                               class="pl-8 pr-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 w-64 transition-all duration-200"
+                               autocomplete="off">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                    <button onclick="toggleTheme()" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <a href="cart.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
+                    </a>
+                    <div id="auth-section"></div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-4">
+                <div class="flex flex-col space-y-4">
+                    <div class="relative mb-4">
+                        <input type="text" 
+                               placeholder="Search products..." 
+                               class="w-full pl-8 pr-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:border-blue-500"
+                               autocomplete="off">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Home</a>
+                    <a href="shop.html" class="text-gray-900 dark:text-white font-semibold">Shop</a>
+                    <div class="relative">
+                        <button onclick="toggleMobileCategories()" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex items-center justify-between w-full">
+                            Categories <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div id="mobile-categories" class="hidden bg-gray-50 dark:bg-gray-700 mt-2 py-2 px-4 rounded-md">
+                            <a href="shop.html?category=Women's%20Fashion" class="block py-2 text-gray-800 dark:text-gray-300">Women's Fashion</a>
+                            <a href="shop.html?category=Men's%20Fashion" class="block py-2 text-gray-800 dark:text-gray-300">Men's Fashion</a>
+                            <a href="shop.html?category=Accessories" class="block py-2 text-gray-800 dark:text-gray-300">Accessories</a>
+                            <a href="shop.html?category=Shoes" class="block py-2 text-gray-800 dark:text-gray-300">Shoes</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">About</a>
+                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Section -->
+    <div class="max-w-7xl mx-auto px-4 py-8 pt-24">
+        <div class="flex flex-col lg:flex-row gap-6">
+            <!-- Filters Sidebar -->
+            <div class="w-full lg:w-64 bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow-md h-fit sticky top-24">
+                <!-- Mobile Filter Toggle -->
+                <button onclick="toggleFilters()" class="lg:hidden w-full flex items-center justify-between mb-4 text-gray-900 dark:text-white">
+                    <span class="text-lg font-semibold">Filters</span>
+                    <i class="fas fa-filter"></i>
+                </button>
+
+                <!-- Filter Content -->
+                <div id="filter-content" class="hidden lg:block space-y-6">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Filters</h3>
+                        
+                        <!-- Categories -->
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-2 text-gray-900 dark:text-white">Categories</h4>
+                            <div class="space-y-2">
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="form-checkbox text-blue-600 dark:bg-gray-700">
+                                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Women's Fashion</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="form-checkbox text-blue-600 dark:bg-gray-700">
+                                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Men's Fashion</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="form-checkbox text-blue-600 dark:bg-gray-700">
+                                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Accessories</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="form-checkbox text-blue-600 dark:bg-gray-700">
+                                    <span class="ml-2 text-sm text-gray-700 dark:text-gray-300">Shoes</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Price Range -->
+                        <div class="mb-6">
+                            <h4 class="font-medium mb-2 text-gray-900 dark:text-white">Price Range</h4>
+                            <div class="space-y-2">
+                                <input type="range" min="0" max="1000" class="w-full accent-blue-600">
+                                <div class="flex justify-between text-sm text-gray-700 dark:text-gray-300">
+                                    <span>$0</span>
+                                    <span class="price-display">$1000</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sort -->
+                        <div>
+                            <h4 class="font-medium mb-2 text-gray-900 dark:text-white">Sort By</h4>
+                            <select class="w-full p-2 text-sm border rounded-md dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Newest First</option>
+                                <option>Popular</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="flex-1">
+                <!-- Search Results Count -->
+                <div class="mb-4 text-sm text-gray-600 dark:text-gray-400" id="results-count">
+                    8 products found
+                </div>
+
+                <!-- Products Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+                    <!-- Product 1 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105" alt="Designer Dress" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded-md text-xs">New</div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Designer Dress</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Elegant evening wear</p>
+                            <div class="flex items-center justify-between mt-3">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">$299.99</span>
+                                <button onclick="addToCart('1', 'Designer Dress', 299.99, 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105')" 
+                                        class="bg-blue-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-blue-700 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22" alt="Leather Jacket" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                            <div class="absolute top-2 right-2 bg-red-600 text-white px-2 py-1 rounded-md text-xs">Sale</div>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Leather Jacket</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Classic style</p>
+                            <div class="flex items-center justify-between mt-3">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">$199.99</span>
+                                <button onclick="addToCart('2', 'Leather Jacket', 199.99, 'https://images.unsplash.com/photo-1617137968427-85924c800a22')" 
+                                        class="bg-blue-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-blue-700 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2" alt="Designer Bag" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Designer Bag</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Luxury accessory</p>
+                            <div class="flex items-center justify-between mt-3">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">$399.99</span>
+                                <button onclick="addToCart('3', 'Designer Bag', 399.99, 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2')" 
+                                        class="bg-blue-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-blue-700 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1518049362265-d5b2a6467637" alt="Designer Shoes" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Designer Shoes</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Premium footwear</p>
+                            <div class="flex items-center justify-between mt-3">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">$259.99</span>
+                                <button onclick="addToCart('4', 'Designer Shoes', 259.99, 'https://images.unsplash.com/photo-1518049362265-d5b2a6467637')" 
+                                        class="bg-blue-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-blue-700 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea" alt="Casual Sneakers" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Casual Sneakers</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Comfortable everyday wear</p>
+                            <div class="flex items-center justify-between mt-3">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">$89.99</span>
+                                <button onclick="addToCart('5', 'Casual Sneakers', 89.99, 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea')" 
+                                        class="bg-blue-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-blue-700 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b" alt="Sunglasses" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Designer Sunglasses</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">UV protection with style</p>
+                            <div class="flex items-center justify-between mt-3">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">$129.99</span>
+                                <button onclick="addToCart('6', 'Designer Sunglasses', 129.99, 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b')" 
+                                        class="bg-blue-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-blue-700 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27" alt="Watch" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Luxury Watch</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Timeless elegance</p>
+                            <div class="flex items-center justify-between mt-3">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">$499.99</span>
+                                <button onclick="addToCart('7', 'Luxury Watch', 499.99, 'https://images.unsplash.com/photo-1576566588028-4147f3842f27')" 
+                                        class="bg-blue-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-blue-700 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden group">
+                        <div class="relative h-48 sm:h-56 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3" alt="Backpack" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">Modern Backpack</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">Stylish and practical</p>
+                            <div class="flex items-center justify-between mt-3">
+                                <span class="text-base sm:text-lg font-bold text-gray-900 dark:text-white">$79.99</span>
+                                <button onclick="addToCart('8', 'Modern Backpack', 79.99, 'https://images.unsplash.com/photo-1584917865442-de89df76afd3')" 
+                                        class="bg-blue-600 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-md hover:bg-blue-700 text-sm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="mt-8 flex justify-center">
+                    <nav class="flex items-center space-x-2">
+                        <button class="px-3 py-1 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            Previous
+                        </button>
+                        <button class="px-3 py-1 rounded-md text-sm bg-blue-600 text-white">1</button>
+                        <button class="px-3 py-1 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">2</button>
+                        <button class="px-3 py-1 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">3</button>
+                        <button class="px-3 py-1 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">
+                            Next
+                        </button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-tshirt text-blue-500 text-2xl"></i>
+                        <span class="text-2xl font-bold">FashionHub</span>
+                    </div>
+                    <p class="text-gray-400">Your one-stop shop for amazing products.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="shop.html?category=electronics" class="text-gray-400 hover:text-white">Electronics</a></li>
+                        <li><a href="shop.html?category=fashion" class="text-gray-400 hover:text-white">Fashion</a></li>
+                        <li><a href="shop.html?category=home" class="text-gray-400 hover:text-white">Home & Living</a></li>
+                        <li><a href="shop.html?category=books" class="text-gray-400 hover:text-white">Books</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 123 Street, City, Country</li>
+                        <li><i class="fas fa-phone mr-2"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@shophub.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 FashionHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function toggleMobileCategories() {
+            const mobileCategories = document.getElementById('mobile-categories');
+            mobileCategories.classList.toggle('hidden');
+        }
+
+        function toggleFilters() {
+            const filterContent = document.getElementById('filter-content');
+            filterContent.classList.toggle('hidden');
+        }
+
+        function filterByCategory(category) {
+            window.location.href = `shop.html?category=${encodeURIComponent(category)}`;
+        }
+
+        // Initialize filters and handle URL parameters
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get category from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get('category');
+            
+            if (category) {
+                // Find and check the corresponding checkbox
+                const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.nextElementSibling.textContent.trim() === decodeURIComponent(category)) {
+                        checkbox.checked = true;
+                        checkbox.dispatchEvent(new Event('change'));
+                    }
+                });
+            }
+
+            // Initialize filters on mobile
+            if (window.innerWidth < 1024) {
+                const filterContent = document.getElementById('filter-content');
+                filterContent.classList.add('hidden');
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const filterContent = document.getElementById('filter-content');
+            if (window.innerWidth >= 1024) {
+                filterContent.classList.remove('hidden');
+            } else {
+                filterContent.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html> 

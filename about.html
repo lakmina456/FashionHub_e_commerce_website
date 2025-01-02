@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FashionHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            100: '#1a1a1a',
+                            200: '#2d2d2d',
+                            300: '#404040',
+                            400: '#535353',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center space-x-2">
+                        <i class="fas fa-tshirt text-blue-600 text-2xl"></i>
+                        <span class="text-2xl font-bold text-gray-800 dark:text-white">FashionHub</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" 
+                        onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Home</a>
+                    <a href="shop.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Shop</a>
+                    <div class="relative group">
+                        <button class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex items-center">
+                            Categories <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute hidden group-hover:block w-48 bg-white dark:bg-gray-800 shadow-lg py-2 mt-2">
+                            <a href="shop.html?category=Women's%20Fashion" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700">Women's Fashion</a>
+                            <a href="shop.html?category=Men's%20Fashion" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700">Men's Fashion</a>
+                            <a href="shop.html?category=Accessories" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700">Accessories</a>
+                            <a href="shop.html?category=Shoes" class="block px-4 py-2 text-gray-800 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700">Shoes</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-gray-900 dark:text-white font-semibold">About</a>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Contact</a>
+                </div>
+
+                <!-- Desktop Actions -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <button onclick="toggleTheme()" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <a href="cart.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white relative">
+                        <i class="fas fa-shopping-cart text-xl"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
+                    </a>
+                    <div id="auth-section"></div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Home</a>
+                    <a href="shop.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Shop</a>
+                    <div class="relative">
+                        <button onclick="toggleMobileCategories()" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex items-center justify-between w-full">
+                            Categories <i class="fas fa-chevron-down text-xs"></i>
+                        </button>
+                        <div id="mobile-categories" class="hidden bg-gray-50 dark:bg-gray-700 mt-2 py-2 px-4 rounded-md">
+                            <a href="shop.html?category=Women's%20Fashion" class="block py-2 text-gray-800 dark:text-gray-300">Women's Fashion</a>
+                            <a href="shop.html?category=Men's%20Fashion" class="block py-2 text-gray-800 dark:text-gray-300">Men's Fashion</a>
+                            <a href="shop.html?category=Accessories" class="block py-2 text-gray-800 dark:text-gray-300">Accessories</a>
+                            <a href="shop.html?category=Shoes" class="block py-2 text-gray-800 dark:text-gray-300">Shoes</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-gray-900 dark:text-white font-semibold">About</a>
+                    <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <div class="pt-24 pb-16">
+        <!-- Hero Section -->
+        <div class="bg-blue-600 text-white py-16">
+            <div class="max-w-7xl mx-auto px-4">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">About FashionHub</h1>
+                <p class="text-xl text-blue-100">Your Premier Destination for Fashion & Style</p>
+            </div>
+        </div>
+
+        <!-- Our Story -->
+        <div class="max-w-7xl mx-auto px-4 py-16">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Founded in 2020, FashionHub emerged from a simple vision: to make high-quality fashion accessible to everyone. 
+                        What started as a small online boutique has grown into a comprehensive fashion destination, serving customers worldwide.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        We believe that everyone deserves to look and feel their best, without compromising on quality or breaking the bank. 
+                        Our curated collection features everything from everyday essentials to statement pieces, all selected with our customers in mind.
+                    </p>
+                </div>
+                <div class="relative h-96">
+                    <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04" alt="Fashion Store" class="w-full h-full object-cover rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+
+        <!-- Our Values -->
+        <div class="bg-gray-50 dark:bg-gray-800 py-16">
+            <div class="max-w-7xl mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-center">Our Values</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                            <i class="fas fa-heart text-4xl text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-4">Quality First</h3>
+                            <p class="text-gray-600 dark:text-gray-300">We never compromise on quality, ensuring each item meets our high standards.</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                            <i class="fas fa-leaf text-4xl text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-4">Sustainability</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Committed to eco-friendly practices and sustainable fashion choices.</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                            <i class="fas fa-users text-4xl text-blue-600 mb-4"></i>
+                            <h3 class="text-xl font-semibold mb-4">Community</h3>
+                            <p class="text-gray-600 dark:text-gray-300">Building a community of fashion enthusiasts who inspire and support each other.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-tshirt text-blue-500 text-2xl"></i>
+                        <span class="text-2xl font-bold">FashionHub</span>
+                    </div>
+                    <p class="text-gray-400">Your one-stop shop for amazing products.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="shop.html?category=Women's%20Fashion" class="text-gray-400 hover:text-white">Women's Fashion</a></li>
+                        <li><a href="shop.html?category=Men's%20Fashion" class="text-gray-400 hover:text-white">Men's Fashion</a></li>
+                        <li><a href="shop.html?category=Accessories" class="text-gray-400 hover:text-white">Accessories</a></li>
+                        <li><a href="shop.html?category=Shoes" class="text-gray-400 hover:text-white">Shoes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 123 Street, City, Country</li>
+                        <li><i class="fas fa-phone mr-2"></i> +1 234 567 890</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@fashionhub.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 FashionHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function toggleMobileCategories() {
+            const mobileCategories = document.getElementById('mobile-categories');
+            mobileCategories.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html> 

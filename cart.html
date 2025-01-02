@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - FashionHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            100: '#1a1a1a',
+                            200: '#2d2d2d',
+                            300: '#404040',
+                            400: '#535353',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <style>
+        /* Smooth transitions for theme changes */
+        * {
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-2xl font-bold text-gray-800 dark:text-white">FashionHub</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Home</a>
+                    <a href="shop.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Shop</a>
+                    <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Categories</a>
+                    <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">About</a>
+                    <a href="contact.html" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="toggleTheme()" class="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <a href="cart.html" class="text-gray-900 dark:text-white font-semibold relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">0</span>
+                    </a>
+                    <div id="auth-section"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Section -->
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <h1 class="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-gray-900 dark:text-white">Shopping Cart</h1>
+        
+        <div class="flex flex-col lg:flex-row gap-6 sm:gap-8">
+            <!-- Cart Items -->
+            <div class="flex-1">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 sm:p-6" id="cart-items">
+                    <!-- Cart items will be loaded here dynamically -->
+                </div>
+                <!-- Continue Shopping Button -->
+                <div class="mt-4">
+                    <a href="shop.html" class="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Continue Shopping
+                    </a>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="w-full lg:w-96">
+                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 sm:p-6">
+                    <h2 class="text-lg sm:text-xl font-semibold mb-4 text-gray-900 dark:text-white">Order Summary</h2>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between text-sm sm:text-base">
+                            <span class="text-gray-600 dark:text-gray-400">Subtotal</span>
+                            <span id="subtotal" class="text-gray-900 dark:text-white">$0.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm sm:text-base">
+                            <span class="text-gray-600 dark:text-gray-400">Shipping</span>
+                            <span id="shipping" class="text-gray-900 dark:text-white">$5.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm sm:text-base">
+                            <span class="text-gray-600 dark:text-gray-400">Tax</span>
+                            <span id="tax" class="text-gray-900 dark:text-white">$0.00</span>
+                        </div>
+                        <div class="border-t border-gray-200 dark:border-gray-700 pt-3">
+                            <div class="flex justify-between font-semibold text-base sm:text-lg">
+                                <span class="text-gray-900 dark:text-white">Total</span>
+                                <span id="total" class="text-gray-900 dark:text-white">$0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Promo Code -->
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Promo Code</label>
+                        <div class="flex flex-col sm:flex-row gap-2">
+                            <input type="text" placeholder="Enter code" class="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-sm bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <button class="w-full sm:w-auto px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-md hover:bg-gray-700 dark:hover:bg-gray-600 text-sm">Apply</button>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Button -->
+                    <button onclick="checkout()" class="w-full bg-blue-600 text-white py-2 sm:py-3 rounded-md hover:bg-blue-700 text-sm sm:text-base">
+                        Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white mt-12">
+        <div class="max-w-6xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">FashionHub</h3>
+                    <p class="text-gray-400">Your one-stop shop for amazing products.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Categories</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Electronics</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Clothing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Accessories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Newsletter</h3>
+                    <form class="mt-4">
+                        <input type="email" placeholder="Enter your email" class="w-full px-4 py-2 rounded-md text-gray-900 dark:bg-gray-700 dark:text-white dark:border-gray-600">
+                        <button class="mt-2 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+    <script>
+        // Cart page specific JavaScript
+        function updateCartUI() {
+            const cartItems = document.getElementById('cart-items');
+            const subtotalElement = document.getElementById('subtotal');
+            const taxElement = document.getElementById('tax');
+            const totalElement = document.getElementById('total');
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="text-center py-8">
+                        <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mb-4">Your cart is empty</p>
+                        <a href="shop.html" class="inline-flex items-center justify-center bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700">
+                            <i class="fas fa-shopping-bag mr-2"></i>
+                            Start Shopping
+                        </a>
+                    </div>
+                `;
+                subtotalElement.textContent = '$0.00';
+                taxElement.textContent = '$0.00';
+                totalElement.textContent = '$0.00';
+                return;
+            }
+
+            let subtotal = 0;
+            cartItems.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                return `
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 py-4 border-b border-gray-200 dark:border-gray-700">
+                        <img src="${item.image}" alt="${item.name}" class="w-24 h-24 object-cover rounded-md">
+                        <div class="flex-1">
+                            <h3 class="text-base sm:text-lg font-semibold text-gray-900 dark:text-white">${item.name}</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-400">$${item.price}</p>
+                            <div class="flex items-center gap-2 mt-2">
+                                <button onclick="updateQuantity('${item.productId}', ${item.quantity - 1})" 
+                                        class="px-2 py-1 border border-gray-300 dark:border-gray-600 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">-</button>
+                                <span class="text-sm text-gray-900 dark:text-white">${item.quantity}</span>
+                                <button onclick="updateQuantity('${item.productId}', ${item.quantity + 1})"
+                                        class="px-2 py-1 border border-gray-300 dark:border-gray-600 rounded-md text-sm text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700">+</button>
+                            </div>
+                        </div>
+                        <div class="flex flex-row sm:flex-col items-center sm:items-end gap-4 sm:gap-2 w-full sm:w-auto">
+                            <p class="font-semibold text-base sm:text-lg text-gray-900 dark:text-white">$${itemTotal.toFixed(2)}</p>
+                            <button onclick="removeFromCart('${item.productId}')" 
+                                    class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 text-sm">
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const tax = subtotal * 0.1; // 10% tax
+            const shipping = 5;
+            const total = subtotal + tax + shipping;
+
+            subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+            taxElement.textContent = `$${tax.toFixed(2)}`;
+            totalElement.textContent = `$${total.toFixed(2)}`;
+        }
+
+        function updateQuantity(productId, newQuantity) {
+            if (newQuantity < 1) {
+                removeFromCart(productId);
+                return;
+            }
+
+            const item = cart.find(item => item.productId === productId);
+            if (item) {
+                item.quantity = newQuantity;
+                updateCart();
+                updateCartUI();
+            }
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.productId !== productId);
+            updateCart();
+            updateCartUI();
+        }
+
+        function checkout() {
+            if (!currentUser) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Implement checkout logic here
+            showNotification('Checkout functionality coming soon!');
+        }
+
+        // Initialize cart page
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCartUI();
+            // Apply theme on page load
+            const theme = localStorage.getItem('theme') || 'light';
+            document.documentElement.classList.toggle('dark', theme === 'dark');
+        });
+    </script>
+</body>
+</html> 
