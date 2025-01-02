@@ -6,7 +6,11 @@
 [![GitHub forks](https://img.shields.io/github/forks/lakmina456/FashionHub_e_commerce_website?style=social)](https://github.com/lakmina456/FashionHub_e_commerce_website/network/members)
 [![GitHub issues](https://img.shields.io/github/issues/lakmina456/FashionHub_e_commerce_website)](https://github.com/lakmina456/FashionHub_e_commerce_website/issues)
 [![GitHub license](https://img.shields.io/github/license/lakmina456/FashionHub_e_commerce_website)](https://github.com/lakmina456/FashionHub_e_commerce_website/blob/main/LICENSE)
-[![Website](https://img.shields.io/website?url=https%3A%2F%2Ffashionhub.com)](https://fashionhub.com)
+
+
+<p align="center">
+    <img src="./screenshots/login.png" width="200" alt="FashionHub Logo" />
+</p>
 
 <p align="center">
     <strong>🌟 Modern E-commerce Platform Built with HTML, TailwindCSS, and Node.js 🌟</strong>
