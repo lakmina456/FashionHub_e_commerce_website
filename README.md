@@ -26,7 +26,39 @@ FashionHub is a sleek and modern e-commerce platform that offers a seamless shop
   
   <img src="screenshots/shop.png" alt="Shop Page - Light" width="800"/>
   <p align="center"><em>Shop Page - Light Theme</em></p>
+</div># FashionHub 🛍️
+
+<div align="center">
+  <h1>FashionHub</h1>
+  <p>Modern E-commerce Platform with Light & Dark Mode</p>
+  <a href="#demo">View Demo</a> · <a href="#features">Features</a> · <a href="#installation">Installation</a>
 </div>
+
+## 🌟 Overview
+A sleek e-commerce platform with responsive design and modern UI/UX.
+
+## 📸 Light & Dark Mode
+<div align="center">
+  <img src="screenshots/homepage.png" alt="Light Mode" width="400"/>
+  <img src="screenshots/homepage-dark.png" alt="Dark Mode" width="400"/>
+</div>
+
+## 📱 Mobile View
+<div align="center">
+  <img src="screenshots/mobile.png" alt="Mobile View" width="250"/>
+</div>
+
+## ✨ Features
+- 🎨 Light/Dark theme
+- 📱 Responsive design
+- 🛒 Shopping cart
+- 👤 User authentication
+- 💳 Secure checkout
+
+## 🚀 Quick Start
+```bash
+npm install
+npm start
 
 ### 🌙 Dark Mode
 <div align="center">
