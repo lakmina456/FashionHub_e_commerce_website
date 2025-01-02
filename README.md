@@ -1,22 +1,41 @@
-# FashionHub 🛍️
+# FashionHub 🛍️ 
 
 <div align="center">
-  <img src="screenshots/logo.png" alt="FashionHub Logo" width="200"/>
-  
-  <p align="center">
-    A modern, responsive e-commerce platform built with cutting-edge web technologies
-    <br />
-    <a href="#demo">View Demo</a>
-    ·
-    <a href="#features">Features</a>
-    ·
-    <a href="#installation">Installation</a>
-  </p>
+
+[![GitHub stars](https://img.shields.io/github/stars/lakmina456/FashionHub_e_commerce_website?style=social)](https://github.com/lakmina456/FashionHub_e_commerce_website/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/lakmina456/FashionHub_e_commerce_website?style=social)](https://github.com/lakmina456/FashionHub_e_commerce_website/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/lakmina456/FashionHub_e_commerce_website)](https://github.com/lakmina456/FashionHub_e_commerce_website/issues)
+[![GitHub license](https://img.shields.io/github/license/lakmina456/FashionHub_e_commerce_website)](https://github.com/lakmina456/FashionHub_e_commerce_website/blob/main/LICENSE)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Ffashionhub.com)](https://fashionhub.com)
+
+<p align="center">
+    <strong>🌟 Modern E-commerce Platform Built with HTML, TailwindCSS, and Node.js 🌟</strong>
+</p>
+
+<p align="center">
+    <a href="#demo">View Demo</a> •
+    <a href="#features">Features</a> •
+    <a href="#installation">Installation</a> •
+    <a href="#tech-stack">Tech Stack</a> •
+    <a href="#contributing">Contributing</a>
+</p>
+
 </div>
 
-## 🌟 Overview
+## 🎯 About The Project
 
-FashionHub is a sleek and modern e-commerce platform that offers a seamless shopping experience. Built with a focus on user experience and performance, it features a responsive design that works beautifully across all devices.
+FashionHub is a modern, fully responsive e-commerce platform designed to provide an exceptional shopping experience. Built with performance and user experience in mind, it features a clean design, dark/light mode support, and seamless shopping functionality.
+
+### 🌟 Key Features
+
+- 📱 Fully Responsive Design
+- 🌓 Dark/Light Mode
+- 🛍️ Product Categories
+- 🔍 Search Functionality
+- 🛒 Shopping Cart
+- 👤 User Authentication
+- 💳 Secure Checkout Process
+- 📦 Order Tracking
 
 ## 📸 Screenshots
 
@@ -166,7 +185,7 @@ FashionHub is a sleek and modern e-commerce platform that offers a seamless shop
 
 1. Clone the repository
 ```bash
-git clone https://github.com/lakmina456/FashionHub_e_commerce_website
+git clone https://github.com/lakmina456/FashionHub_e_commerce_website.git
 cd fashionhub
 ```
 
@@ -246,10 +265,22 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Isuru Lakmina - [@isuru_lakmina](https://twitter.com/isuru_lakmina)
 
-Project Link: [https://github.com/lakmina456/FashionHub_e_commerce_website]
+Project Link: [https://github.com/lakmina456/FashionHub_e_commerce_website](https://github.com/lakmina456/FashionHub_e_commerce_website)
 
 ## 🙏 Acknowledgments
 
 - [Tailwind CSS](https://tailwindcss.com)
 - [Font Awesome](https://fontawesome.com)
 - [Unsplash](https://unsplash.com) - for product images 
+
+---
+
+<div align="center">
+    <p>If you found this project helpful, please consider giving it a ⭐️!</p>
+    <p>Built with ❤️ by <a href="https://github.com/lakmina456">Isuru Lakmina</a></p>
+</div>
+
+<!-- Keywords for GitHub Search -->
+<div style="display: none">
+    ecommerce, online store, fashion website, responsive design, tailwindcss, nodejs, express, mongodb, shopping cart, dark mode, light mode
+</div>
