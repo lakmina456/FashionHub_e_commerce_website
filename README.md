@@ -26,39 +26,7 @@ FashionHub is a sleek and modern e-commerce platform that offers a seamless shop
   
   <img src="screenshots/shop.png" alt="Shop Page - Light" width="800"/>
   <p align="center"><em>Shop Page - Light Theme</em></p>
-</div># FashionHub 🛍️
-
-<div align="center">
-  <h1>FashionHub</h1>
-  <p>Modern E-commerce Platform with Light & Dark Mode</p>
-  <a href="#demo">View Demo</a> · <a href="#features">Features</a> · <a href="#installation">Installation</a>
 </div>
-
-## 🌟 Overview
-A sleek e-commerce platform with responsive design and modern UI/UX.
-
-## 📸 Light & Dark Mode
-<div align="center">
-  <img src="screenshots/homepage.png" alt="Light Mode" width="400"/>
-  <img src="screenshots/homepage-dark.png" alt="Dark Mode" width="400"/>
-</div>
-
-## 📱 Mobile View
-<div align="center">
-  <img src="screenshots/mobile.png" alt="Mobile View" width="250"/>
-</div>
-
-## ✨ Features
-- 🎨 Light/Dark theme
-- 📱 Responsive design
-- 🛒 Shopping cart
-- 👤 User authentication
-- 💳 Secure checkout
-
-## 🚀 Quick Start
-```bash
-npm install
-npm start
 
 ### 🌙 Dark Mode
 <div align="center">
@@ -74,47 +42,39 @@ npm start
   <img src="screenshots/mobile.png" alt="Mobile View" width="400"/>
   <p align="center"><em>Responsive Mobile Design</em></p>
 </div>
-## 📸 Screenshots
 
-<div align="center">
-  <img src="screenshots/home.png" alt="Home Page" width="400"/>
-  <img src="screenshots/shop.png" alt="Shop Page" width="400"/>
-  <img src="screenshots/cart.png" alt="Cart Page" width="400"/>
-  <img src="screenshots/login.png" alt="Login Page" width="400"/>
-</div>
-
-## 🖼️ Other Screenshots
+### 🖼️ Other Screenshots
 <div align="center" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0;">
   <a href="screenshots/about.png" target="_blank">
-    <img src="screenshots/about.png" alt="About Page - Light" width="250" style="border-radius: 8px;"/>
+    <img src="screenshots/about.png" alt="About Page - Light" width="250" style="margin: 5px"/>
     <p align="center"><em>About - Light</em></p>
   </a>
   <a href="screenshots/about-dark.png" target="_blank">
-    <img src="screenshots/about-dark.png" alt="About Page - Dark" width="250" style="border-radius: 8px;"/>
+    <img src="screenshots/about-dark.png" alt="About Page - Dark" width="250" style="margin: 5px"/>
     <p align="center"><em>About - Dark</em></p>
   </a>
   <a href="screenshots/contact.png" target="_blank">
-    <img src="screenshots/contact.png" alt="Contact Page - Light" width="250" style="border-radius: 8px;"/>
+    <img src="screenshots/contact.png" alt="Contact Page - Light" width="250" style="margin: 5px"/>
     <p align="center"><em>Contact - Light</em></p>
   </a>
   <a href="screenshots/contact-dark.png" target="_blank">
-    <img src="screenshots/contact-dark.png" alt="Contact Page - Dark" width="250" style="border-radius: 8px;"/>
+    <img src="screenshots/contact-dark.png" alt="Contact Page - Dark" width="250" style="margin: 5px"/>
     <p align="center"><em>Contact - Dark</em></p>
   </a>
   <a href="screenshots/cart.png" target="_blank">
-    <img src="screenshots/cart.png" alt="Cart Page - Light" width="250" style="border-radius: 8px;"/>
+    <img src="screenshots/cart.png" alt="Cart Page - Light" width="250" style="margin: 5px"/>
     <p align="center"><em>Cart - Light</em></p>
   </a>
   <a href="screenshots/cart-dark.png" target="_blank">
-    <img src="screenshots/cart-dark.png" alt="Cart Page - Dark" width="250" style="border-radius: 8px;"/>
+    <img src="screenshots/cart-dark.png" alt="Cart Page - Dark" width="250" style="margin: 5px"/>
     <p align="center"><em>Cart - Dark</em></p>
   </a>
   <a href="screenshots/login.png" target="_blank">
-    <img src="screenshots/login.png" alt="Login Page" width="250" style="border-radius: 8px;"/>
+    <img src="screenshots/login.png" alt="Login Page" width="250" style="margin: 5px"/>
     <p align="center"><em>Login</em></p>
   </a>
   <a href="screenshots/register.png" target="_blank">
-    <img src="screenshots/register.png" alt="Register Page" width="250" style="border-radius: 8px;"/>
+    <img src="screenshots/register.png" alt="Register Page" width="250" style="margin: 5px"/>
     <p align="center"><em>Register</em></p>
   </a>
 </div>
