@@ -17,7 +17,31 @@
 ## 🌟 Overview
 
 FashionHub is a sleek and modern e-commerce platform that offers a seamless shopping experience. Built with a focus on user experience and performance, it features a responsive design that works beautifully across all devices.
+## 📸 Screenshots
 
+### 🌞 Light Mode
+<div align="center">
+  <img src="screenshots/homepage.png" alt="Home Page - Light" width="800"/>
+  <p align="center"><em>Homepage - Light Theme</em></p>
+  
+  <img src="screenshots/shop.png" alt="Shop Page - Light" width="800"/>
+  <p align="center"><em>Shop Page - Light Theme</em></p>
+</div>
+
+### 🌙 Dark Mode
+<div align="center">
+  <img src="screenshots/homepage-dark.png" alt="Home Page - Dark" width="800"/>
+  <p align="center"><em>Homepage - Dark Theme</em></p>
+  
+  <img src="screenshots/shop-dark.png" alt="Shop Page - Dark" width="800"/>
+  <p align="center"><em>Shop Page - Dark Theme</em></p>
+</div>
+
+### 📱 Mobile View
+<div align="center">
+  <img src="screenshots/mobile.png" alt="Mobile View" width="400"/>
+  <p align="center"><em>Responsive Mobile Design</em></p>
+</div>
 ## 📸 Screenshots
 
 <div align="center">
@@ -78,7 +102,7 @@ FashionHub is a sleek and modern e-commerce platform that offers a seamless shop
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/fashionhub.git
+git clone https://github.com/lakmina456/FashionHub_e_commerce_website
 cd fashionhub
 ```
 
@@ -157,7 +181,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📧 Contact
 
 Isuru Lakmina - [@isuru_lakmina](https://twitter.com/isuru_lakmina)
-Project Link: [https://github.com/yourusername/fashionhub](https://github.com/yourusername/fashionhub)
+
+Project Link: [https://github.com/lakmina456/FashionHub_e_commerce_website]
 
 ## 🙏 Acknowledgments
 
