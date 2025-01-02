@@ -17,75 +17,100 @@
 ## 🌟 Overview
 
 FashionHub is a sleek and modern e-commerce platform that offers a seamless shopping experience. Built with a focus on user experience and performance, it features a responsive design that works beautifully across all devices.
+
 ## 📸 Screenshots
 
-### 🌞 Light Mode
+### 🏠 Homepage
 <div align="center">
-  <img src="screenshots/homepage.png" alt="Home Page - Light" width="800"/>
-  <p align="center"><em>Homepage - Light Theme</em></p>
-  
-  <img src="screenshots/shop.png" alt="Shop Page - Light" width="800"/>
-  <p align="center"><em>Shop Page - Light Theme</em></p>
+  <table>
+    <tr>
+      <td align="center"><strong>Light Theme</strong></td>
+      <td align="center"><strong>Dark Theme</strong></td>
+    </tr>
+    <tr>
+      <td><img src="screenshots/homepage.png" alt="Home Page - Light" width="400"/></td>
+      <td><img src="screenshots/homepage-dark.png" alt="Home Page - Dark" width="400"/></td>
+    </tr>
+  </table>
 </div>
 
-### 🌙 Dark Mode
+### 🛍️ Shop Page
 <div align="center">
-  <img src="screenshots/homepage-dark.png" alt="Home Page - Dark" width="800"/>
-  <p align="center"><em>Homepage - Dark Theme</em></p>
-  
-  <img src="screenshots/shop-dark.png" alt="Shop Page - Dark" width="800"/>
-  <p align="center"><em>Shop Page - Dark Theme</em></p>
+  <table>
+    <tr>
+      <td align="center"><strong>Light Theme</strong></td>
+      <td align="center"><strong>Dark Theme</strong></td>
+    </tr>
+    <tr>
+      <td><img src="screenshots/shop.png" alt="Shop Page - Light" width="400"/></td>
+      <td><img src="screenshots/shop-dark.png" alt="Shop Page - Dark" width="400"/></td>
+    </tr>
+  </table>
 </div>
 
 ### 📱 Mobile View
 <div align="center">
-  <img src="screenshots/mobile.png" alt="Mobile View" width="400"/>
+  <img src="screenshots/mobile.png" alt="Mobile View" width="300"/>
   <p align="center"><em>Responsive Mobile Design</em></p>
 </div>
 
-### 🖼️ Other Screenshots
 <details>
 <summary>🖼️ View More Screenshots</summary>
 
 ### Authentication Pages
 <div align="center">
-  <a href="screenshots/login.png" target="_blank">
-    <img src="screenshots/login.png" alt="Login Page" width="400" style="margin: 5px"/>
-  </a>
-  <a href="screenshots/register.png" target="_blank">
-    <img src="screenshots/register.png" alt="Register Page" width="400" style="margin: 5px"/>
-  </a>
-  <p align="center"><em>Login and Registration Pages</em></p>
+  <table>
+    <tr>
+      <td align="center"><strong>Login</strong></td>
+      <td align="center"><strong>Register</strong></td>
+    </tr>
+    <tr>
+      <td><img src="screenshots/login.png" alt="Login Page" width="400"/></td>
+      <td><img src="screenshots/register.png" alt="Register Page" width="400"/></td>
+    </tr>
+  </table>
 </div>
 
-### About & Contact
+### About Page
 <div align="center">
-  <details>
-    <summary>📝 About Page (Light/Dark)</summary>
-    <img src="screenshots/about.png" alt="About Page - Light" width="800"/>
-    <p align="center"><em>About Page - Light Theme</em></p>
-    <img src="screenshots/about-dark.png" alt="About Page - Dark" width="800"/>
-    <p align="center"><em>About Page - Dark Theme</em></p>
-  </details>
+  <table>
+    <tr>
+      <td align="center"><strong>Light Theme</strong></td>
+      <td align="center"><strong>Dark Theme</strong></td>
+    </tr>
+    <tr>
+      <td><img src="screenshots/about.png" alt="About Page - Light" width="400"/></td>
+      <td><img src="screenshots/about-dark.png" alt="About Page - Dark" width="400"/></td>
+    </tr>
+  </table>
+</div>
 
-  <details>
-    <summary>📞 Contact Page (Light/Dark)</summary>
-    <img src="screenshots/contact.png" alt="Contact Page - Light" width="800"/>
-    <p align="center"><em>Contact Page - Light Theme</em></p>
-    <img src="screenshots/contact-dark.png" alt="Contact Page - Dark" width="800"/>
-    <p align="center"><em>Contact Page - Dark Theme</em></p>
-  </details>
+### Contact Page
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><strong>Light Theme</strong></td>
+      <td align="center"><strong>Dark Theme</strong></td>
+    </tr>
+    <tr>
+      <td><img src="screenshots/contact.png" alt="Contact Page - Light" width="400"/></td>
+      <td><img src="screenshots/contact-dark.png" alt="Contact Page - Dark" width="400"/></td>
+    </tr>
+  </table>
 </div>
 
 ### Shopping Cart
 <div align="center">
-  <details>
-    <summary>🛒 Cart Page (Light/Dark)</summary>
-    <img src="screenshots/cart.png" alt="Cart Page - Light" width="800"/>
-    <p align="center"><em>Cart Page - Light Theme</em></p>
-    <img src="screenshots/cart-dark.png" alt="Cart Page - Dark" width="800"/>
-    <p align="center"><em>Cart Page - Dark Theme</em></p>
-  </details>
+  <table>
+    <tr>
+      <td align="center"><strong>Light Theme</strong></td>
+      <td align="center"><strong>Dark Theme</strong></td>
+    </tr>
+    <tr>
+      <td><img src="screenshots/cart.png" alt="Cart Page - Light" width="400"/></td>
+      <td><img src="screenshots/cart-dark.png" alt="Cart Page - Dark" width="400"/></td>
+    </tr>
+  </table>
 </div>
 
 </details>
