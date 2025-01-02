@@ -9,7 +9,7 @@
 
 
 <p align="center">
-    <img src="./screenshots/login.png" width="200" alt="FashionHub Logo" />
+    <img src="./screenshots/logo.png" width="200" alt="FashionHub Logo" />
 </p>
 
 <p align="center">
