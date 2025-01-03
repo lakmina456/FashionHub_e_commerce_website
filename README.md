@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-    <a href="#demo">View Demo</a> •
+    <a href="https://modernfashionhub.netlify.app">View Demo</a> •
     <a href="#features">Features</a> •
     <a href="#installation">Installation</a> •
     <a href="#tech-stack">Tech Stack</a> •
