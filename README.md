@@ -9,7 +9,7 @@
 
 
 <p align="center">
-    <img src="./screenshots/responsive-mac-layout.png" width="800" alt="FashionHub" />
+    <img src="./screenshots/logo.png" width="200" alt="FashionHub LOgo" />
 </p>
 
 <p align="center">
@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-    <img src="./screenshots/logo.png" width="200" alt="FashionHub Logo" />
+    <img src="./screenshots/mock/responsive-mac-layout.png" width="800" alt="FashionHub" />
 </p>
 
 </div>
